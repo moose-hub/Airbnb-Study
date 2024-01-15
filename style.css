@@ -1,0 +1,23 @@
+:root {
+    --brand-main-color: #FF385C;
+    --brand-main-shadow: #E00B41;
+    --brand-main-highlight: #FF4c6c;
+
+    --text-main: #222222;
+    --text-bold: #000000;
+    --text-highlight: #717171;
+
+    --white: #ffffff;
+    --white-shadow: #e6e6e6;
+    --black: #000000;
+    --black-highlight: #1a1a1a;
+
+    --font-w-light: 400;
+    --font-w-normal: 600;
+    --font-w-heavy: 800;
+
+    --font-s-small: .875rem;
+    --font-s-main: 14px;
+    --font-s-large: 1.125rem;
+    --font-s-header: 1.375rem;
+}
