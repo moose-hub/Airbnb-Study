@@ -174,7 +174,7 @@ body {
 
     width: 100%;
     gap: var(--xl-space);
-    padding: 1rem;
+    padding: var(--xl-space);
 }
 
 .item__card {
@@ -281,4 +281,40 @@ body {
 
 .card__information-rating i{
     font-size: var(--font-s-small);
+}
+
+/* content showmore button */ 
+
+.content__showmore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: var(--l-space);
+    margin: var(--xl-space) 0;
+}
+
+.content__showmore-label {
+    font-size: var(--font-s-large);
+    font-weight: var(--font-w-med);
+}
+
+.btn {
+    background: var(--black-highlight);
+    padding: 14px 24px;
+    border-radius: 8px;
+
+    font-size: var(--font-s-large);
+    font-weight: var(--font-w-med);
+    color: var(--white);
+    cursor: pointer;
+
+    line-height: 1.4;
+
+    transition: background .125s ease-in-out;
+}
+
+.btn:hover {
+    background: var(--black);
 }
