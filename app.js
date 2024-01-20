@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 "assets/Holiday 2/2.jpg",
                 "assets/Holiday 2/3.jpg",
                 "assets/Holiday 2/4.jpg",
+                "assets/Holiday 2/5.jpg"
             ]
         },
         {
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 "assets/Holiday 3/2.jpg",
                 "assets/Holiday 3/3.jpg",
                 "assets/Holiday 3/4.jpg",
+                "assets/Holiday 3/5.jpg"
             ]
         },
         {
@@ -63,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 "assets/Holiday 5/2.jpg",
                 "assets/Holiday 5/3.jpg",
                 "assets/Holiday 5/4.jpg",
+                "assets/Holiday 5/5.jpg"
             ]
         }
     ]
@@ -178,37 +181,37 @@ document.addEventListener("DOMContentLoaded", function() {
     var parentElement = document.getElementById("content__items-grid");
     parentElement.appendChild(cardElement);
 
-    // // run createCarousel for each card
-    // createCarousel(cardElement.id, holidayData[i].Images);
+    // run createCarousel for each card
+    createCarousel(cardElement.id, holidayData[i].Images);
     }
 
-    // function createCarousel(containerId, images) {
-    //     const cardImg = document.getElementById(containerId).querySelector(".card__img");
-    //     const prevButton = cardImg.parentElement.querySelector(".card__prev-button");
-    //     const nextButton = cardImg.parentElement.querySelector(".card__next-button");
-    //     let currentIndex = 0;
+    function createCarousel(containerId, images) {
+        const cardImg = document.getElementById(containerId).querySelector(".card__img");
+        const prevButton = cardImg.parentElement.querySelector(".card__prev-button");
+        const nextButton = cardImg.parentElement.querySelector(".card__next-button");
+        let currentIndex = 0;
 
-    //     function showImage(index) {
-    //         const percentage = -index * 100;
-    //         const translateValue = `calc(${percentage}% - ${currentIndex * imageGap}rem)`
-    //         cardImg.style.transform = `translateX(${translateValue})`;
-    //     }
+        function showImage(index) {
+            const percentage = -index * 100;
+            const translateValue = `calc(${percentage}% - ${currentIndex * imageGap}rem)`
+            cardImg.style.transform = `translateX(${translateValue})`;
+        }
 
-    //     function showPrev() {
-    //         currentIndex = (currentIndex - 1 + images.length) % images.length;
-    //         showImage(currentIndex);
-    //     }
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
 
-    //     function showNext() {
-    //         currentIndex = (currentIndex + 1) % images.length;
-    //         showImage(currentIndex);
-    //     }
+        function showNext() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
 
-    //     prevButton.addEventListener("click", showPrev);
-    //     nextButton.addEventListener("click", showNext);
+        prevButton.addEventListener("click", showPrev);
+        nextButton.addEventListener("click", showNext);
 
-    //     // Initially show the first image
-    //     showImage(currentIndex);
-    // }
+        // Initially show the first image
+        showImage(currentIndex);
+    }
 
 });
