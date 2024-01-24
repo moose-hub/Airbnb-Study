@@ -37,12 +37,12 @@
 }
 
 body {
-    width: 100vw;
+    width: 430px;
     font-size: var(--font-s-main);
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: var(--font-w-main);
-    margin: 0;
+    margin: 0 auto;
     line-height: 1.25;
 
     overflow-x: hidden;
@@ -174,9 +174,9 @@ body {
 
 .content__items {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat( auto-fit, minmax(380px, 1fr) );
 
-    width: 100%;
+
     gap: var(--xl-space);
     padding: var(--xl-space);
 }
