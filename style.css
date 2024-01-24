@@ -46,14 +46,21 @@ body {
     line-height: 1.25;
 
     overflow-x: hidden;
+    background: var(--brand-main-color);
+}
+
+header, .content__wrapper {
+    background: var(--white);
 }
 
 .header__container {
+    position: relative;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     padding: var(--l-space) var(--xl-space) 0 var(--xl-space);
 
-    box-shadow: 0px 1px 5px 0px var(--white-shadow);
+    box-shadow: 0px 1px 5px 0px var(--white-shadow-dark);
 }
 
 .header__filters {
@@ -454,7 +461,7 @@ body {
 
 .terms__navigation-list {
     display: flex;
-    gap: var(--l-space);
+    gap: var(--m-space);
     color: var(--black-highlight-light);
     flex-wrap: wrap;
 }
@@ -469,4 +476,88 @@ body {
 
 
 
-/* media queries */
+/* sticky footer */
+
+.sticky__footer-container {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    bottom: 0;
+
+    transform: translate(0, 0px);
+
+    transition: transform .125s ease-in-out;
+    width: 100%;
+    max-width: 430px;
+}
+
+.sticky__map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--m-space);
+
+    font-weight: var(--font-w-med);
+    color: var(--white);
+
+    background: var(--black);
+    margin: 0 auto var(--xl-space) auto;
+    padding: var(--l-space);
+
+    border-radius: 1.5rem;
+    cursor: pointer;
+    
+    width: 25%;
+
+    transform: translate(0, 0px);
+
+    transition: transform .125s ease-in-out;
+}
+
+.sticky__map:hover {
+    transform: scale(1.025);
+}
+
+.sticky__map button {
+    cursor: pointer;
+}
+
+.sticky__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-top: 1px solid var(--white-shadow);
+    padding: var(--m-space) 0;
+    background: var(--white);
+}
+
+.sticky__footer a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-shadow-dark);
+
+    opacity: .8;
+
+    transition: opacity .125s ease-in-out;
+}
+
+.sticky__footer a:hover {
+    opacity: 1;
+}
+
+.sticky__footer a:nth-child(1) {
+    color: var(--brand-main-color);
+}
+
+.sticky__footer-icon {
+    font-size: var(--font-s-header);
+}
+
+.sticky__footer-label {
+    font-size: var(--font-s-small);
+}
