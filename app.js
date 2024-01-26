@@ -228,19 +228,36 @@ document.addEventListener("DOMContentLoaded", function() {
         showImage(currentIndex);
     }
 
-    var prevScrollY = 0;
 
-    window.addEventListener("scroll", () => {
-        var scrollY = window.scrollY;
-        let stickyFooter = document.querySelector(".sticky__footer-container");
-        
-        if (scrollY < prevScrollY) {
-            stickyFooter.style.transform = "translate(0, 0px)"
-        } else if (scrollY > prevScrollY) {
-            stickyFooter.style.transform = "translate(0, 60px)"
+    var scrollCount = 0;
+    const stickyFooter = document.querySelector(".sticky__footer-container");
+    const stickyMapBtn = document.querySelector(".sticky__map");
+
+    document.addEventListener("wheel", function(event) {
+        if ('deltaY' in event) {
+            if (event.deltaY > 0) {
+                scrollCount++;
+    
+                if (scrollCount >= 2) {
+                    stickyFooter.style.transform = "translate(0, 60px)";
+                    stickyFooter.style.pointerEvents = "none";
+                    scrollCount = 0;
+                }
+            } else if (event.deltaY < 0) {
+                stickyFooter.style.transform = "translate(0, 0px)";
+                stickyFooter.style.pointerEvents = "auto";
+                scrollCount = 0;
+            }
         }
 
-        prevScrollY = scrollY <= 0 ? 0 : scrollY;
-    })
 
+        const footerCont = document.querySelector(".footer__container");
+        const elementRect = footerCont.getBoundingClientRect();
+
+        if (elementRect.top <= window.innerHeight && elementRect.bottom >= 0) {
+            stickyMapBtn.style.opacity = "0";
+        } else {
+            stickyMapBtn.style.opacity = "1";
+        }
+    });
 });
