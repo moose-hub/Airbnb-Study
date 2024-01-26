@@ -513,11 +513,29 @@ header, .content__wrapper {
 
     transform: translate(0, 0px);
 
-    transition: transform .125s ease-in-out;
+    transition: transform .125s ease-in-out, opacity .225s ease-in-out;
+
+}
+
+.sticky__map-hide {
+    animation-name: FixedFooterFade .5s;
 }
 
 .sticky__map:hover {
     transform: scale(1.025);
+}
+
+@keyframes FixedFooterFade {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+    }
 }
 
 .sticky__map button {
